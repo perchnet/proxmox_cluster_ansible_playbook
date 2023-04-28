@@ -1,0 +1,38 @@
+---
+pve_group: pvetest
+pve_cluster_enabled: yes
+pve_groups:
+  - name: ops
+    comment: Operations Team
+pve_users:
+  - name: bri@pam
+    email: pvetest@ibeep.com
+    firstname: bri
+    lastname: r
+    groups: [ "ops" ]
+pve_acls:
+  - path: /
+    roles: [ "Administrator" ]
+    groups: [ "ops" ]
+      # pve_storages:
+      #   - name: localdir
+      #     type: dir
+      #     content: [ "images", "iso", "backup" ]
+      #     path: /plop
+      #     maxfiles: 4
+pve_ssh_port: 22
+pve_extra_packages: 
+  -
+    "libpve-network-perl"
+  -
+    "ifupdown2"
+  -
+    "pve-kernel-6.2"
+  -
+    "openvswitch-switch"
+pve_run_system_upgrades: true
+interfaces_template: "{{ pvegroup }}_interfaces.j2"
+
+
+
+

@@ -1,0 +1,3 @@
+[submodule "ansible-role-proxmox"]
+	path = ansible-role-proxmox
+	url = https://github.com/lae/ansible-role-proxmox
